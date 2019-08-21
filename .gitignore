@@ -1,4 +1,4 @@
-q# Compiled Object files
+# Compiled Object files
 *.slo
 *.lo
 *.o
@@ -27,6 +27,8 @@ q# Compiled Object files
 *.out
 *.app
 run*
+mlesearch_and_profile
+mcmc_topt
 
 build*
 bin
