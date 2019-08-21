@@ -10,12 +10,14 @@
 // constructor
 prms::prms( void )
 {
-    v.insert(                v.begin(),                num_params, 0.0 );
-    v_initial_values.insert( v_initial_values.begin(), num_params, 0.0 );
-    v_stepsizes.insert(      v_stepsizes.begin(),      num_params, 0.0 );
-    v_sigmas.insert(         v_sigmas.begin(),         num_params, 0.0 );
-    v_leftbound.insert(      v_leftbound.begin(),      num_params, 0.0 );
-    v_rightbound.insert(     v_rightbound.begin(),     num_params, 0.0 );
+    // initialize all of the vectors with zeroes
+    v.insert(                      v.begin(),                       num_params, 0.0 );
+    v_initial_values.insert(       v_initial_values.begin(),        num_params, 0.0 );
+    v_stepsizes.insert(            v_stepsizes.begin(),             num_params, 0.0 );
+    v_sigmas.insert(               v_sigmas.begin(),                num_params, 0.0 );
+    v_leftbound.insert(            v_leftbound.begin(),             num_params, 0.0 );
+    v_rightbound.insert(           v_rightbound.begin(),            num_params, 0.0 );
+    v_stepsize_for_profile.insert( v_stepsize_for_profile.begin(),  num_params, 0.0 );
     
     assert( v.size()==num_params );
     assert( v_initial_values.size()==num_params );

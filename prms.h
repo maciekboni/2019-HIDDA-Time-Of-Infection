@@ -15,7 +15,7 @@
 
 using namespace std;
 
-enum parameter_index { i_slope, i_sigma, i_mean_starttiter_H3, i_sigma_starttiter_H3, i_mean_starttiter_H1, i_sigma_starttiter_H1, i_a, i_topt, num_params }; 
+enum parameter_index { i_slope, i_sigma, i_mean_starttiter_H3, i_sigma_starttiter_H3, i_a, i_topt, num_params }; 
 typedef enum parameter_index prm_index;
 
 extern gsl_rng *G_RNG;	
@@ -34,10 +34,12 @@ public:
     vector<double> v;			// this holds all the parameters; they are indexed by the enums above
     vector<double> v_initial_values;	// this holds initial values for all the parameters (when doing a maxlike search)
 
-    vector<double> v_stepsizes;
+    vector<double> v_stepsizes;                 // for initial steps in Nelder-Mead search
     vector<double> v_sigmas;
     vector<double> v_leftbound;
     vector<double> v_rightbound;
+    
+    vector<double> v_stepsize_for_profile;      // this is the stepsize to move forward by when profiling this parameter
 
     
 

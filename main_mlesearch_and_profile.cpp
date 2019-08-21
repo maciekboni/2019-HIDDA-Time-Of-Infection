@@ -400,9 +400,8 @@ vector<double> DoNelderMead( prms* ppc, bool profile )
     //
     // 2014-12-22 : these step sizes appear to be in *absolute* units
     ss = gsl_vector_alloc( sdim );
-    gsl_vector_set_all(ss, 0.1);         
-
-    
+    gsl_vector_set_all(ss, 0.1);    // here, you are setting the step sizes as a default to 0.1 for all parameters, but these
+                                    // are overridden in the loop below
     for(k=0;k<sdim;k++)
     {
         gsl_vector_set( ss, k, ppc->v_stepsizes[ ppc->v_indices_search_params[k] ] );
@@ -455,15 +454,6 @@ vector<double> DoNelderMead( prms* ppc, bool profile )
     
     int i=0;
     map< int,vector<double> >::iterator it; // not declared inside this function
-    /*for( it=G_10FL_SUBSET.begin(); it != G_10FL_SUBSET.end(); it++ )
-    {
-        int id = it->first;
-        vector<double> v = it->second;
-        double logttr = gsl_vector_get(s->x, i);
-        printf("\n\t%d\t%1.1f\t%1.1f\t%1.1f\t%1.1f\t%1.1f \t     %1.2f  %1.1f  \t%1.5f \t%1.3f", id, v[0], v[1], v[2], v[3], v[4], logttr, 10*pow(2.0,logttr), gsl_vector_get(s->x, n+i_slope), gsl_vector_get(s->x, n+i_sigma) );
-        i++;
-    }
-    printf("\n");*/
     
     // this is the neg-log-likelihood
     v.push_back( s->fval );
@@ -503,23 +493,6 @@ void ParseArgs(int argc, char **argv)
     int i, start;
     start=1;
 
-    /*if( argc<start )
-    { 
-        PrintUsageModes(); 
-        exit(-1);
-    }
-        
-    if( argv[1][0]=='n' && argv[1][1]=='o' && argv[1][2]=='n' && argv[1][3]=='e' && argv[1][4]==0 )
-    {
-        //fprintf(stderr, "\n\n\tnot printing to Outfile\n\n");
-    }
-    else 
-    {
-        Outfile = fopen( argv[1], "w" );
-    }
-    
-    prm_intro_day = atof( argv[2] );*/
-    
     string str;
     for(i=start; i<argc; i++)
     {
