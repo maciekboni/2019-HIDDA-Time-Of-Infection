@@ -8,7 +8,7 @@ C++ code for inferring the time of infection from serological data, as presented
    Boni MF, Mølbak K, Krogfelt KA.
    In L. Held, N. Hens, P O'Neill, J. Wallinga, editors, Handbook of Infectious Disease Data Analysis, 2019.
 
-STEP 1:
+*STEP 1:*
 
 Compile the code and run
 
@@ -18,6 +18,6 @@ from the command line.  This will give you the MLE estimates for the slope (anti
 
 If you run
 
-   `./mlesearch_and_profile -mlesearch_and_profile`
+   `./mlesearch_and_profile -profile`
    
 the slope parameter will be profiled and a confidence interval will be reported.
