@@ -8,7 +8,7 @@ C++ code for inferring the time of infection from serological data, as presented
    Boni MF, Mølbak K, Krogfelt KA.
    In L. Held, N. Hens, P O'Neill, J. Wallinga, editors, Handbook of Infectious Disease Data Analysis, 2019.
 
-*STEP 1:*
+**STEP 1:**
 
 Compile the code and run
 
